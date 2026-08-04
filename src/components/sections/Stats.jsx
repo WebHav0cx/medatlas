@@ -9,15 +9,21 @@ export default function Stats() {
             "77%+",
             "Estimated healthcare facilities have not fully adopted Electronic Health Records",
           ],
-          ["71%", "of healthcare spending is paid out-of-pocket"],
+
           ["<10%", "of Nigerians have health insurance coverage"],
           [
             "40,000+",
             "Healthcare facilities across Nigeria require interoperability.",
           ],
+          [
+            "Paper-Based",
+            "Medical records in many Nigerian healthcare facilities are still paper or hybrid systems",
+          ],
         ].map(([num, desc]) => (
           <div key={num}>
-            <div className="text-4xl font-bold mb-2 font-display text-green-300">
+            <div
+              className={`font-bold mb-2 font-display text-green-300 ${num.length > 10 ? "text-2xl mt-2" : "text-4xl"}`}
+            >
               {num}
             </div>
             <p className="text-sm leading-snug opacity-75">{desc}</p>
