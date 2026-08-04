@@ -5,10 +5,16 @@ export default function Stats() {
     <section className="py-16 px-6 bg-emerald-900">
       <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10 text-center text-white">
         {[
-          ["77%+", "Estimated healthcare facilities have not fully adopted Electronic Health Records"],
+          [
+            "77%+",
+            "Estimated healthcare facilities have not fully adopted Electronic Health Records",
+          ],
           ["71%", "of healthcare spending is paid out-of-pocket"],
           ["<10%", "of Nigerians have health insurance coverage"],
-          ["40,000+", "Healthcare facilities across Nigeria"],
+          [
+            "40,000+",
+            "Healthcare facilities across Nigeria require interoperability.",
+          ],
         ].map(([num, desc]) => (
           <div key={num}>
             <div className="text-4xl font-bold mb-2 font-display text-green-300">
