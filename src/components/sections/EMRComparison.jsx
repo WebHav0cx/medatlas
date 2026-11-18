@@ -11,24 +11,27 @@ export default function EMRComparison() {
   ];
 
   return (
-    <section className="py-24 px-6">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <span className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 bg-emerald-50 text-emerald-900">
+    <section className="px-6 py-24">
+      <div className="mx-auto max-w-4xl">
+        <div className="mb-12 text-center">
+          <span className="
+            mb-4 inline-block rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold tracking-widest
+            text-emerald-900 uppercase
+          ">
             Positioning
           </span>
-          <h2 className="text-4xl md:text-5xl mb-4 font-display text-emerald-900 ">
+          <h2 className="mb-4 font-serif text-4xl text-emerald-900 md:text-5xl">
             We're not replacing EMRs.
-            <br />
+            <br className="font-sans" />
             We're connecting them.
           </h2>
-          <p className="text-base max-w-xl mx-auto">
+          <p className="mx-auto max-w-xl text-base">
             Existing EMRs digitize one hospital. MedAtlas becomes the identity,
             discovery, and exchange layer that runs alongside every system.
           </p>
         </div>
-        <div className="rounded-2xl overflow-hidden border border-slate-200">
-          <div className="grid grid-cols-3 text-sm font-semibold bg-slate-50 border-b border-slate-200">
+        <div className="overflow-hidden rounded-2xl border border-slate-200">
+          <div className="grid grid-cols-3 border-b border-slate-200 bg-slate-50 text-sm font-semibold">
             <div className="px-5 py-3">Feature</div>
             <div className="px-5 py-3">Existing EMRs</div>
             <div className="px-5 py-3">MedAtlas</div>
@@ -36,19 +39,12 @@ export default function EMRComparison() {
           {rows.map(([feature, emr, med], i) => (
             <div
               key={feature}
-              className="grid grid-cols-3 text-sm"
-              style={{
-                borderBottom:
-                  i < rows.length - 1
-                    ? "1px solid var(--color-slate-200)"
-                    : undefined,
-                background: i % 2 === 0 ? "white" : "var(--color-slate-50)",
-              }}
+              className={["grid grid-cols-3 text-sm", ((i < rows.length - 1) ? "border-b border-b-slate-200" : ""), (!(i % 2 === 0) ? "bg-slate-50" : ""), ((i % 2 === 0) ? "bg-white" : "")].filter(Boolean).join(" ")}
             >
               <div className="px-5 py-3.5 font-medium">{feature}</div>
               <div className="px-5 py-3.5">{emr}</div>
-              <div className="px-5 py-3.5 font-semibold flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full shrink-0" />
+              <div className="flex items-center gap-1.5 px-5 py-3.5 font-semibold">
+                <span className="size-1.5 shrink-0 rounded-full" />
                 {med}
               </div>
             </div>

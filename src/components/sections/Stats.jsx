@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Stats() {
   return (
-    <section className="py-16 px-6 bg-emerald-900">
-      <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10 text-center text-white">
+    <section className="bg-emerald-900 px-6 py-16">
+      <div className="mx-auto grid max-w-5xl grid-cols-2 gap-10 text-center text-white md:grid-cols-4">
         {[
           [
             "77%+",
@@ -22,7 +22,7 @@ export default function Stats() {
         ].map(([num, desc]) => (
           <div key={num}>
             <div
-              className={`font-bold mb-2 font-display text-green-300 ${num.length > 10 ? "text-2xl mt-2" : "text-4xl"}`}
+              className={[((num.length > 10) ? "mt-2" : ""), "mb-2 font-sans font-bold text-green-300", ((num.length > 10) ? "text-2xl" : ""), (!(num.length > 10) ? "text-4xl" : "")].filter(Boolean).join(" ")}
             >
               {num}
             </div>

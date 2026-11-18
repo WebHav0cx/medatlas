@@ -10,18 +10,21 @@ import {
 
 export default function OfflineFirst() {
   return (
-    <section className="py-24 px-6">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+    <section className="px-6 py-24">
+      <div className="mx-auto grid max-w-6xl items-center gap-14 md:grid-cols-2">
         <div>
-          <span className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 bg-emerald-50 text-emerald-900">
+          <span className="
+            mb-4 inline-block rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold tracking-widest
+            text-emerald-900 uppercase
+          ">
             Built for Nigeria
           </span>
-          <h2 className="text-4xl md:text-5xl mb-5 text-emerald-900 font-display">
+          <h2 className="mb-5 font-serif text-4xl text-emerald-900 md:text-5xl">
             Works even when
-            <br />
+            <br className="font-sans" />
             the internet doesn't.
           </h2>
-          <p className="text-base leading-relaxed mb-8 text-slate-600">
+          <p className="mb-8 text-base leading-relaxed text-slate-600">
             Unreliable connectivity shouldn't stop hospitals from delivering
             care. MedAtlas is offline-first by design daily operations continue
             uninterrupted, and records sync automatically the moment
@@ -39,7 +42,10 @@ export default function OfflineFirst() {
             ].map(({ label, icon }) => (
               <div
                 key={label}
-                className="flex items-center gap-2.5 px-4 py-3 rounded-xl text-sm font-medium bg-emerald-50 text-emerald-900 border border-green-200"
+                className="
+                  flex items-center gap-2.5 rounded-xl border border-green-200 bg-emerald-50 px-4 py-3 text-sm
+                  font-medium text-emerald-900
+                "
               >
                 {icon} {label}
               </div>
@@ -47,8 +53,8 @@ export default function OfflineFirst() {
           </div>
         </div>
 
-        <div className="rounded-2xl p-8 border border-rounded-2xl ">
-          <p className="text-xs font-semibold uppercase tracking-widest mb-6">
+        <div className="rounded-2xl border p-8">
+          <p className="mb-6 text-xs font-semibold tracking-widest uppercase">
             Sync Flow
           </p>
           {[
@@ -86,7 +92,7 @@ export default function OfflineFirst() {
             <div key={step.label}>
               <div className="flex items-center gap-3 py-2">
                 <div
-                  className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 ${step.bg} ${step.color}`}
+                  className={[("flex size-7 shrink-0 items-center justify-center rounded-lg"), step.bg, step.color].filter(Boolean).join(" ")}
                 >
                   {step.icon}
                 </div>

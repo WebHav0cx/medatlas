@@ -1,5 +1,4 @@
 import React from "react";
-import unsplashImg1 from "../../assets/unsplash-1.jpg";
 import {
   ExternalLink,
   Network,
@@ -10,25 +9,28 @@ import {
 
 export default function CTA() {
   return (
-    <section className="py-24 px-6">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        <div className="relative rounded-2xl overflow-hidden h-[440px] shadow-[0_4px_30px_rgba(26,71,49,0.12)]">
+    <section className="px-6 py-24">
+      <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
+        <div className="relative h-110 overflow-hidden rounded-2xl shadow-sm">
           <img
-            src={unsplashImg1}
+            src="/assets/unsplash-1.jpg"
             alt="Healthcare professionals consulting"
-            className="w-full h-full object-cover"
+            className="size-full object-cover"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(26,71,49,0.35)_0%,transparent_55%)]" />
+          <div className="absolute inset-0 bg-linear-to-t from-emerald-900/35 to-transparent" />
         </div>
 
         <div>
-          <span className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 bg-emerald-50 text-emerald-900">
+          <span className="
+            mb-4 inline-block rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold tracking-widest
+            text-emerald-900 uppercase
+          ">
             Join the Mission
           </span>
-          <h2 className="text-4xl md:text-5xl mb-5 font-display text-emerald-900 ">
+          <h2 className="mb-5 font-serif text-4xl text-emerald-900 md:text-5xl">
             Healthcare Shouldn't Restart Every Time a Patient Changes Hospitals.
           </h2>
-          <p className="text-base leading-relaxed mb-8 text-slate-600">
+          <p className="mb-8 text-base leading-relaxed text-slate-600">
             MedAtlas is building Nigeria's Healthcare Identity and Discovery
             Network helping hospitals securely discover and exchange patient
             records while every provider keeps full ownership of its own data.
@@ -36,19 +38,25 @@ export default function CTA() {
           <div className="flex flex-wrap gap-3">
             <a
               href="#prototype"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm transition-all duration-200 hover:opacity-90 active:scale-95 bg-emerald-900 text-white"
+              className="
+                inline-flex items-center gap-2 rounded-full bg-emerald-900 px-6 py-3 text-sm font-semibold
+                text-white transition-all duration-200 hover:opacity-90 active:scale-95
+              "
             >
               View Prototype <ExternalLink size={14} />
             </a>
             <a
               href="#"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm transition-all duration-200 active:scale-95 border-[1.5px] border-emerald-900 text-emerald-900"
+              className="
+                inline-flex items-center gap-2 rounded-full border-1 border-emerald-900 px-6 py-3 text-sm
+                font-semibold text-emerald-900 transition-all duration-200 active:scale-95
+              "
             >
               Contact Us
             </a>
           </div>
 
-          <div className="mt-8 pt-8 flex gap-8 border-t border-slate-200">
+          <div className="mt-8 flex gap-8 border-t border-slate-200 pt-8">
             {[
               {
                 icon: <Network size={16} />,
@@ -64,9 +72,9 @@ export default function CTA() {
               <a
                 key={item.label}
                 href="#"
-                className="flex items-start gap-2 group hover:opacity-70 transition-opacity"
+                className="group flex items-start gap-2 transition-opacity hover:opacity-70"
               >
-                <span className="text-emerald-900 mt-0.5">{item.icon}</span>
+                <span className="mt-0.5 text-emerald-900">{item.icon}</span>
                 <div>
                   <p className="text-xs font-semibold">{item.label}</p>
                   <p className="text-xs">{item.sub}</p>

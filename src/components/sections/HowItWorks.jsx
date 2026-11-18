@@ -10,41 +10,47 @@ export default function HowItWorks() {
   ]
 
   return (
-    <section id="how-it-works" className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <span className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 bg-emerald-50 text-emerald-900">Workflow</span>
+    <section id="how-it-works" className="px-6 py-24">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-16 text-center">
+          <span className="
+            mb-4 inline-block rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold tracking-widest
+            text-emerald-900 uppercase
+          ">Workflow</span>
           <h2
-            className="text-4xl md:text-5xl mb-4 font-display text-emerald-900 font-display"
+            className="mb-4 font-serif text-4xl text-emerald-900 md:text-5xl"
           >
             How MedAtlas Makes This Possible.
           </h2>
         </div>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-start">
+        <div className="hidden items-start md:flex">
           {steps.map((step, i) => (
-            <div key={step.num} className="flex items-start flex-1">
+            <div key={step.num} className="flex flex-1 items-start">
               <div className="flex-1">
                 <div
-                  className="relative w-16 h-16 rounded-2xl flex items-center justify-center mb-5 text-white bg-emerald-900"
+                  className="relative mb-5 flex size-16 items-center justify-center rounded-2xl bg-emerald-900 text-white"
                 >
                   {step.icon}
                   <span
-                    className="absolute -top-2 -right-2 w-5 h-5 rounded-full text-xs font-bold flex items-center justify-center bg-lime-500 text-emerald-900"
+                    className="
+                      absolute -top-2 -right-2 flex size-5 items-center justify-center rounded-full bg-lime-500 text-xs
+                      font-bold text-emerald-900
+                    "
                   >
                     {step.num}
                   </span>
                 </div>
                 <h3
-                  className="text-lg font-semibold mb-2 font-display"
+                  className="mb-2 font-serif text-lg font-semibold"
                 >
                   {step.title}
                 </h3>
                 <ul className="space-y-1">
                   {step.points.map(p => (
-                    <li key={p} className="text-sm flex items-start gap-1.5">
-                      <span className="mt-1.5 w-1 h-1 rounded-full flex-shrink-0 bg-emerald-900" />
+                    <li key={p} className="flex items-start gap-1.5 text-sm">
+                      <span className="mt-1.5 size-1 flex-shrink-0 rounded-full bg-emerald-900" />
                       {p}
                     </li>
                   ))}
@@ -52,10 +58,10 @@ export default function HowItWorks() {
               </div>
               {i < steps.length - 1 && (
                 <div
-                  className="flex-shrink-0 flex items-center pt-8 w-8"
+                  className="flex w-8 flex-shrink-0 items-center pt-8"
                 >
-                  <div className="flex-1 h-px bg-slate-200" />
-                  <ChevronRight size={14} className="text-slate-600 shrink-0 mx-[-1px]" />
+                  <div className="h-px flex-1 bg-slate-200" />
+                  <ChevronRight size={14} className="-mx-0.25 shrink-0 text-slate-600" />
                 </div>
               )}
             </div>
@@ -63,29 +69,32 @@ export default function HowItWorks() {
         </div>
 
         {/* Mobile */}
-        <div className="md:hidden flex flex-col gap-8">
+        <div className="flex flex-col gap-8 md:hidden">
           {steps.map(step => (
             <div key={step.num} className="flex gap-4">
               <div
-                className="relative w-14 h-14 rounded-2xl flex-shrink-0 flex items-center justify-center text-white bg-emerald-900"
+                className="relative flex size-14 flex-shrink-0 items-center justify-center rounded-2xl bg-emerald-900 text-white"
               >
                 {step.icon}
                 <span
-                  className="absolute -top-2 -right-2 w-5 h-5 rounded-full text-xs font-bold flex items-center justify-center bg-lime-500 text-emerald-900"
+                  className="
+                    absolute -top-2 -right-2 flex size-5 items-center justify-center rounded-full bg-lime-500 text-xs
+                    font-bold text-emerald-900
+                  "
                 >
                   {step.num}
                 </span>
               </div>
               <div>
                 <h3
-                  className="text-lg font-semibold mb-1 font-display"
+                  className="mb-1 font-serif text-lg font-semibold"
                 >
                   {step.title}
                 </h3>
                 <ul className="space-y-1">
                   {step.points.map(p => (
-                    <li key={p} className="text-sm flex items-start gap-1.5">
-                      <span className="mt-1.5 w-1 h-1 rounded-full flex-shrink-0 bg-emerald-900" />
+                    <li key={p} className="flex items-start gap-1.5 text-sm">
+                      <span className="mt-1.5 size-1 flex-shrink-0 rounded-full bg-emerald-900" />
                       {p}
                     </li>
                   ))}

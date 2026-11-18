@@ -3,28 +3,31 @@ import { Shield, Network, Fingerprint } from "lucide-react";
 
 export default function Solution() {
   return (
-    <section id="solution" className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-5">
-          <span className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 bg-emerald-50 text-emerald-900">
+    <section id="solution" className="px-6 py-24">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-5 text-center">
+          <span className="
+            mb-4 inline-block rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold tracking-widest
+            text-emerald-900 uppercase
+          ">
             The Solution
           </span>
-          <h2 className="text-4xl md:text-5xl mb-4  text-emerald-900 font-display">
+          <h2 className="mb-4 font-serif text-4xl text-emerald-900 md:text-5xl">
             Healthcare Identity &amp; Discovery Network.
           </h2>
-          <p className="text-lg max-w-2xl mx-auto mb-2 text-slate-600">
+          <p className="mx-auto mb-2 max-w-2xl text-lg text-slate-600">
             We are not replacing hospital systems.{" "}
-            <span className="text-emerald-900 font-semibold">
+            <span className="font-semibold text-emerald-900">
               We are connecting them.
             </span>
           </p>
-          <p className="text-base max-w-2xl mx-auto">
+          <p className="mx-auto max-w-2xl text-base">
             MedAtlas is not another EMR. It's the secure identity, discovery,
             and exchange layer that sits alongside every existing system.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mt-14">
+        <div className="mt-14 grid gap-6 md:grid-cols-3">
           {[
             {
               icon: <Fingerprint size={24} />,
@@ -47,25 +50,20 @@ export default function Solution() {
           ].map(({ icon, num, title, desc }) => (
             <div
               key={title}
-              className="rounded-2xl p-8 flex flex-col gap-4 hover:shadow-md transition-all duration-200 group"
-              style={{
-                border: "1px solid var(--color-slate-200)",
-                background: "var(--color-white)",
-              }}
+              className="
+                group flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-8 transition-all
+                duration-200 hover:shadow-md
+              "
             >
               <div className="flex items-center justify-between">
                 <div
-                  className="w-12 h-12 rounded-2xl flex items-center justify-center"
-                  style={{
-                    background: "var(--color-emerald-50)",
-                    color: "var(--color-emerald-900)",
-                  }}
+                  className="flex size-12 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-900"
                 >
                   {icon}
                 </div>
                 <span className="text-sm font-bold">{num}</span>
               </div>
-              <h3 className="text-xl font-display">{title}</h3>
+              <h3 className="font-serif text-xl">{title}</h3>
               <p className="text-sm leading-relaxed">{desc}</p>
             </div>
           ))}

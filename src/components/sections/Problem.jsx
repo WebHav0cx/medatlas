@@ -3,28 +3,31 @@ import { CheckCircle2, XCircle } from "lucide-react";
 
 export default function Problem() {
   return (
-    <section id="problem" className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <span className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 bg-emerald-50 text-emerald-900">
+    <section id="problem" className="px-6 py-24">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-16 text-center">
+          <span className="
+            mb-4 inline-block rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold tracking-widest
+            text-emerald-900 uppercase
+          ">
             The Problem
           </span>
-          <h2 className="text-4xl md:text-5xl mb-4 font-display text-emerald-900 ">
+          <h2 className="mb-4 font-serif text-4xl text-emerald-900 md:text-5xl">
             Healthcare Shouldn't Start
-            <br />
+            <br className="font-sans" />
             From Zero Every Time.
           </h2>
-          <p className="text-lg max-w-2xl mx-auto text-slate-600">
+          <p className="mx-auto max-w-2xl text-lg text-slate-600">
             Every day, thousands of Nigerians move between hospitals carrying
             little or no medical history. Doctors rely on memory, paperwork, and
             repeated tests delaying care and increasing costs.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10 mb-20 items-start">
+        <div className="mb-20 grid items-start gap-10 md:grid-cols-2">
           {/* Journey diagram */}
-          <div className="rounded-2xl p-8 bg-white border">
-            <p className="text-sm font-semibold mb-6">
+          <div className="rounded-2xl border bg-white p-8">
+            <p className="mb-6 text-sm font-semibold">
               Aremu's journey fragmented
             </p>
             {[
@@ -57,7 +60,7 @@ export default function Problem() {
               <div key={i}>
                 <div className="flex items-start gap-3">
                   <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${step.ok ? "bg-emerald-50 border-[1.5px] border-green-200" : "bg-red-50 border-[1.5px] border-red-200"}`}
+                    className={["mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full", ((step.ok) ? "border-1 border-green-200 bg-emerald-50" : ""), (!(step.ok) ? "border-1 border-red-200 bg-red-50" : "")].filter(Boolean).join(" ")}
                   >
                     {step.ok ? (
                       <CheckCircle2 size={14} className="text-emerald-900" />
@@ -67,7 +70,7 @@ export default function Problem() {
                   </div>
                   <div>
                     <p className="text-sm font-semibold">{step.label}</p>
-                    <p className="text-xs mt-0.5">{step.sub}</p>
+                    <p className="mt-0.5 text-xs">{step.sub}</p>
                   </div>
                 </div>
                 {i < arr.length - 1 && (
@@ -79,13 +82,13 @@ export default function Problem() {
 
           {/* Story */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-display">Meet Aremu.</h3>
+            <h3 className="font-serif text-2xl">Meet Aremu.</h3>
             <p className="text-base leading-relaxed text-slate-600">
               Two years ago, Aremu had surgery in Ibadan. His records stayed
               inside Hospital A. Months later he moved to Lagos. One evening he
               was rushed to another hospital with complications.
             </p>
-            <div className="rounded-xl p-5 space-y-3 bg-white border">
+            <div className="space-y-3 rounded-xl border bg-white p-5">
               {[
                 { q: "Have you had surgery before?", a: "Yes." },
                 { q: "Which hospital?", a: '"I can\'t remember."' },
@@ -103,11 +106,11 @@ export default function Problem() {
             </div>
             <p className="text-base leading-relaxed text-slate-600">
               Not because the information didn't exist but because it was{" "}
-              <span className="text-emerald-900 font-semibold">
+              <span className="font-semibold text-emerald-900">
                 trapped inside another hospital.
               </span>
             </p>
-            <p className="text-lg font-semibold font-display">
+            <p className="font-sans text-lg font-semibold">
               Medical history should follow the patient not remain trapped
               inside a building.
             </p>
@@ -115,9 +118,9 @@ export default function Problem() {
         </div>
 
         {/* Before / After comparison */}
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="rounded-2xl p-7 bg-red-50 border-[1.5px] border-red-200">
-            <p className="text-xs font-bold uppercase tracking-widest mb-5 flex items-center gap-2">
+        <div className="grid gap-6 md:grid-cols-2">
+          <div className="rounded-2xl border-1 border-red-200 bg-red-50 p-7">
+            <p className="mb-5 flex items-center gap-2 text-xs font-bold tracking-widest uppercase">
               <XCircle size={14} /> Before MedAtlas
             </p>
             {[
@@ -133,10 +136,10 @@ export default function Problem() {
               <div key={i}>
                 <div className="flex items-center gap-2.5 py-1">
                   <div
-                    className={`w-2 h-2 rounded-full shrink-0 ${i === 0 || i === 4 ? "bg-red-600" : "bg-red-300"}`}
+                    className={["size-2 shrink-0 rounded-full", (!(i === 0) && !(i === 4) ? "bg-red-300" : ""), (((i === 0 || i === 4)) ? "bg-red-600" : "")].filter(Boolean).join(" ")}
                   />
                   <span
-                    className={`text-sm ${i === 7 ? "text-red-600 font-semibold" : "text-emerald-950 font-normal"}`}
+                    className={["text-sm", (!(i === 7) ? "font-normal text-emerald-950" : ""), ((i === 7) ? "font-semibold text-red-600" : "")].filter(Boolean).join(" ")}
                   >
                     {step}
                   </span>
@@ -148,8 +151,8 @@ export default function Problem() {
             ))}
           </div>
 
-          <div className="rounded-2xl p-7 bg-green-50 border-[1.5px] border-green-200">
-            <p className="text-xs font-bold uppercase tracking-widest mb-5 flex items-center gap-2">
+          <div className="rounded-2xl border-1 border-green-200 bg-green-50 p-7">
+            <p className="mb-5 flex items-center gap-2 text-xs font-bold tracking-widest uppercase">
               <CheckCircle2 size={14} /> With MedAtlas
             </p>
             {[
@@ -167,10 +170,10 @@ export default function Problem() {
               <div key={i}>
                 <div className="flex items-center gap-2.5 py-1">
                   <div
-                    className={`w-2 h-2 rounded-full shrink-0 ${i === 9 ? "bg-lime-500" : i === 2 ? "bg-emerald-900" : "bg-emerald-300"}`}
+                    className={["size-2 shrink-0 rounded-full", (!(i === 9) && !(i === 2) ? "bg-emerald-300" : ""), (!(i === 9) && (i === 2) ? "bg-emerald-900" : ""), ((i === 9) ? "bg-lime-500" : "")].filter(Boolean).join(" ")}
                   />
                   <span
-                    className={`text-sm ${i === 9 ? "text-emerald-900 font-bold" : "text-emerald-950 font-normal"}`}
+                    className={["text-sm", ((i === 9) ? "font-bold text-emerald-900" : ""), (!(i === 9) ? "font-normal text-emerald-950" : "")].filter(Boolean).join(" ")}
                   >
                     {step}
                   </span>

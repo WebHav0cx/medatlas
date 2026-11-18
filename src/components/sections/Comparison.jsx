@@ -3,19 +3,22 @@ import { CheckCircle2, XCircle } from "lucide-react";
 
 export default function Comparison() {
   return (
-    <section className="py-24 px-6">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-14">
-          <span className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 bg-emerald-50 text-emerald-900">
+    <section className="px-6 py-24">
+      <div className="mx-auto max-w-5xl">
+        <div className="mb-14 text-center">
+          <span className="
+            mb-4 inline-block rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold tracking-widest
+            text-emerald-900 uppercase
+          ">
             Before &amp; After
           </span>
-          <h2 className="text-4xl md:text-5xl font-display text-emerald-900 ">
+          <h2 className="font-serif text-4xl text-emerald-900 md:text-5xl">
             The world before.
-            <br />
+            <br className="font-sans" />
             The world with MedAtlas.
           </h2>
         </div>
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid gap-6 md:grid-cols-2">
           {[
             {
               title: "Traditional Healthcare",
@@ -50,9 +53,9 @@ export default function Comparison() {
           ].map(({ title, accent, bg, border, items, check }) => (
             <div
               key={title}
-              className={`rounded-2xl p-8 border-[1.5px] ${bg} ${border}`}
+              className={[("rounded-2xl border-1 p-8"), bg, border].filter(Boolean).join(" ")}
             >
-              <h3 className={`text-xl font-bold mb-6 font-display ${accent}`}>
+              <h3 className={[("mb-6 font-serif text-xl font-bold"), accent].filter(Boolean).join(" ")}>
                 {title}
               </h3>
               <ul className="space-y-3">

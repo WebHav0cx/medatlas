@@ -51,49 +51,52 @@ export default function Roadmap() {
   ];
 
   return (
-    <section id="roadmap" className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-14">
-          <span className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 bg-emerald-50 text-emerald-900">
+    <section id="roadmap" className="px-6 py-24">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-14 text-center">
+          <span className="
+            mb-4 inline-block rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold tracking-widest
+            text-emerald-900 uppercase
+          ">
             Product Roadmap
           </span>
-          <h2 className="text-4xl md:text-5xl mb-4 text-emerald-900 font-display">
+          <h2 className="mb-4 font-serif text-4xl text-emerald-900 md:text-5xl">
             Building incrementally.
-            <br />
+            <br className="font-sans" />
             Designed for national scale.
           </h2>
         </div>
-        <div className="grid md:grid-cols-4 gap-5">
+        <div className="grid gap-5 md:grid-cols-4">
           {phases.map((phase) => (
             <div
               key={phase.num}
-              className={`rounded-2xl p-6 flex flex-col gap-3 ${phase.active ? "bg-emerald-900 border-none" : "bg-white border border-slate-200"}`}
+              className={[((phase.active) ? "flex flex-col gap-3 rounded-2xl bg-emerald-900 p-6" : ""), (!(phase.active) ? "flex flex-col gap-3 rounded-2xl border bg-white p-6" : ""), (!(phase.active) ? "border-slate-200" : ""), ((phase.active) ? "border-yellow-700/18" : "")].filter(Boolean).join(" ")} data-slot={`     ${(phase.active ? " " : "  ")}`}
             >
               <div className="flex items-center justify-between">
                 <span
-                  className={`text-xs font-bold px-2.5 py-1 rounded-full ${phase.active ? "bg-green-300/20 text-green-300" : "bg-emerald-50 text-emerald-900"}`}
+                  className={[((phase.active) ? "rounded-full px-2.5 py-1 text-xs font-bold" : ""), (!(phase.active) ? "rounded-full px-2.5 py-1 text-xs font-bold" : ""), (!(phase.active) ? "bg-emerald-50 text-emerald-900" : ""), ((phase.active) ? "bg-green-300/20 text-green-300" : "")].filter(Boolean).join(" ")}
                 >
                   {phase.label}
                 </span>
                 {phase.active && (
-                  <span className="text-xs font-bold px-2 py-0.5 rounded bg-lime-500 text-emerald-900">
+                  <span className="rounded bg-lime-500 px-2 py-0.5 text-xs font-bold text-emerald-900">
                     Now
                   </span>
                 )}
               </div>
               <h3
-                className={`text-lg font-semibold font-display ${phase.active ? "text-white" : "text-emerald-900"}`}
+                className={[(false ? "font-serif" : ""), ((phase.active) ? "font-serif text-lg font-semibold" : ""), (!(phase.active) ? "font-serif text-lg font-semibold" : ""), (!(phase.active) ? "text-emerald-900" : ""), ((phase.active) ? "text-white" : "")].filter(Boolean).join(" ")}
               >
                 {phase.title}
               </h3>
-              <ul className="space-y-1.5 mt-1">
+              <ul className="mt-1 space-y-1.5">
                 {phase.items.map((item) => (
                   <li
                     key={item}
-                    className={`text-xs flex items-start gap-1.5 ${phase.active ? "text-[rgba(255,255,255,0.8)]" : "text-slate-600"}`}
+                    className={[((phase.active) ? "flex items-start gap-1.5 text-xs text-white/80" : ""), (!(phase.active) ? "flex items-start gap-1.5 text-xs text-slate-600" : "")].filter(Boolean).join(" ")}
                   >
                     <span
-                      className={`mt-1.5 w-1 h-1 rounded-full shrink-0 ${phase.active ? "bg-green-300" : "bg-lime-500"}`}
+                      className={[((phase.active) ? "mt-1.5 size-1 shrink-0 rounded-full bg-green-300" : ""), (!(phase.active) ? "mt-1.5 size-1 shrink-0 rounded-full bg-lime-500" : "")].filter(Boolean).join(" ")}
                     />
                     {item}
                   </li>

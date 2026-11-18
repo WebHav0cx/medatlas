@@ -1,15 +1,13 @@
 import React from "react";
-import logoImg from "../../assets/medatlas_logo.png";
-import logoImg2 from "../../assets/medatlas_logo2.png";
 
 export default function Footer() {
   return (
-    <footer className="py-12 px-6 bg-emerald-900 text-white">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+    <footer className="bg-emerald-900 px-6 py-12 text-white">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-8 grid gap-8 md:grid-cols-3">
           <div>
-            <div className="shrink-0 mb-4">
-              <img src={logoImg2} alt="MedAtlas" className="h-12 w-auto" />
+            <div className="mb-4 shrink-0">
+              <img src="/assets/medatlas_logo2.png" alt="MedAtlas" className="h-12 w-auto" />
             </div>
             <p className="text-sm leading-relaxed text-white/50">
               Nigeria's Healthcare Identity & Discovery Network. Connecting
@@ -17,7 +15,7 @@ export default function Footer() {
             </p>
           </div>
           <div>
-            <div className="grid grid-cols-2 gap-y-2 gap-x-4">
+            <div className="grid grid-cols-2 gap-x-4 gap-y-2">
               {[
                 "Problem",
                 "Solution",
@@ -29,7 +27,7 @@ export default function Footer() {
                 <a
                   key={link}
                   href={`#${link.toLowerCase().replace(/ /g, "-")}`}
-                  className="text-sm transition-opacity hover:opacity-100 text-white/55"
+                  className="text-sm text-white/55 transition-opacity hover:opacity-100"
                 >
                   {link}
                 </a>
@@ -38,7 +36,10 @@ export default function Footer() {
           </div>
           <div></div>
         </div>
-        <div className="flex flex-col md:flex-row items-center justify-between gap-2 pt-6 text-xs border-t border-[rgba(255,255,255,0.1)] text-[rgba(255,255,255,0.3)]">
+        <div className="
+          flex flex-col items-center justify-between gap-2 border-t border-white/10 pt-6 text-xs
+          text-white/30 md:flex-row
+        ">
           <span>Healthcare Identity & Discovery Network</span>
         </div>
       </div>
